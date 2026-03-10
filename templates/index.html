@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>roUwUter</title>
+</head>
+
+<body>
+    <h1>
+        roUwUter
+    </h1>
+    <div class="devices">
+
+        <div class="container">
+
+            {% for device in devices %}
+            {% if device.status == 'bound' %}
+            <div class="device">
+                Hostname: {{device['host-name']}}
+                <br />
+                IP: {{device['active-address']}}
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>
