@@ -6,39 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <title>roUwUter</title>
-    {{ turbo }}
+    {{ turbo() }}
 </head>
 <body class="open-sans-400">
     <h1>
         roUwUter
     </h1>
-    <div class="devices" id="devices">
-        
-        <div class="container">
-
-            {% for device in devices %}
-            {% if device.status == 'bound' %}
-            <div class="device">
-                <div class="hostname">
-                    hostname: {{device['host-name']}}
-                </div>
-                <div class="ip">
-                    IP: {{device['active-address']}}
-                </div>
-                <div class="mac">
-                    MAC: {{device['active-mac-address']}}
-                </div>
-                <div class="dhcp">
-                    dynamic: {{device['dynamic']}}
-                </div>
-                <div class="vendor">
-                    MAC Vendor: {{device['vendor']}}  {{device['last-seen']}}
-                </div>
-            </div>
-            {% endif %}
-            {% endfor %}
-        </div>
-    </div>
+    {% include 'devices.html' %}
 </body>
 
 </html>

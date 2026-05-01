@@ -1,0 +1,31 @@
+
+<div class="devices" id="devices">
+        
+    <div class="container">
+
+        {% for device in devices %}
+        {% if device.status == 'bound' %}
+        <div class="device">
+            <div class="hostname">
+                hostname: {{device['host-name']}}
+            </div>
+            <div class="ip">
+                IP: {{device['active-address']}}
+            </div>
+            <div class="mac">
+                MAC: {{device['active-mac-address']}}
+            </div>
+            <div class="dhcp">
+                dynamic: {{device['dynamic']}}
+            </div>
+            <div class="vendor">
+                MAC Vendor: {{device['vendor']}}
+            </div>
+            <div class="last-seen">
+                last seen: {{device['last-seen']}}
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
