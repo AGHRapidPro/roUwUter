@@ -11,7 +11,7 @@ import urllib3
 urllib3.disable_warnings() # disable ssl warnings
 
 mac = MacLookup()
-mac.update_vendors()
+#mac.update_vendors()
 
 
 load_dotenv()
