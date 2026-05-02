@@ -8,7 +8,7 @@ import time
 from mac_vendor_lookup import MacLookup
 import urllib3
 
-urllib3.disable_warnings()
+urllib3.disable_warnings() # disable ssl warnings
 
 mac = MacLookup()
 mac.update_vendors()
@@ -56,3 +56,6 @@ def update_data():
             print("replacing")
             turbo.push(turbo.replace(
                 render_template('devices.html'), 'devices'))
+
+if __name__ == '__main__':
+    app.run(debug=True, port=8001)
