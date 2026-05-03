@@ -53,7 +53,7 @@ def update_data():
     with app.app_context():
         while True:
             time.sleep(10)
-            print("replacing")
+            # print("replacing")
             turbo.push(turbo.replace(
                 render_template('devices.html'), 'devices'))
 
