@@ -14,7 +14,6 @@
 *,
 *::before,
 *::after {
-    font-family:
     box-sizing: border-box;
 }
 
@@ -115,7 +114,7 @@ h1 {
 
 }
 .device:nth-child(odd) {
-    background-color: antiquewhite;
+    background-color:aquamarine;
 }
 
 .device > div {
